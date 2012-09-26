@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Ben DelGiorno
+    Introduction to Programming
+    Project 2 - Text Adventure Game -->
+ <head>
+   <title>Escaping The Forest</title>
+   <style>
+      body {Background-color:black;}
+      h1 {font-family: courier; color:lime;}
+      .mail {font-family: courier; font-size: 10pt; color:lime;}
+   </style>
+        <script type="text/javascript">
+            var score = 0;
+            var hasVisitedNorth = false;
+            var hasVisitedSouth = false;
+            var hasVisitedEast = false;
+            var hasVisitedWest = false;
+            function btn_north_click() {
+              var msg ="There is an old campsite that has been abandoned.";
+              if(!hasVisitedNorth) {
+                 score =score +5;
+                 hasVisitedNorth =true;
+              }
+              alert(msg);
+            }
+            function btn_south_click() {
+              var msg ="There is a trail blocked by fallen trees and overgrown brush.";
+              if(!hasVisitedSouth) {
+                 score =score +5;
+                 hasVisitedSouth =true;
+              }
+              alert(msg);
+            }
+            function btn_east_click() {
+              var msg = "There is a cottage in the distance with lights on and footsteps leading to it.";
+              if(!hasVisitedEast) {
+                 score =score +5;
+                 hasVisitedEast =true;
+              }
+              alert(msg);
+            }  
+            function btn_west_click() {
+              var msg ="There is a large creek blocking your path.";
+              if(!hasVisitedWest) {
+                 score =score +5;
+                 hasVisitedWest =true;
+              }
+              alert(msg);
+            } 
+            function btn_score_click(){
+              score =score;
+              alert(score);
+            }
+        </script>
+  </head>
+    <body>
+      <h1>Escaping the Forest - v0.2</h1>
+         <br>
+         <br>
+      <textarea style="text-align: left; color: lime; background-color: black;" id="taGame" cols="50" rows="10">
+You are standing in the middle of a forest surrounded by tall trees and darkness. 
+It is a brisk fall night and the moonlight is overshadowed by clouds. You begin to hear noises and become panicked. 
+You must find a way out of the forest and get to a safer place before it is too late.
+      </textarea>
+         <br>
+         <br>
+           <input onclick="btn_north_click();" 
+                  value="North" 
+                  type="Button">
+
+           <input onclick="btn_south_click();" 
+                  value="South" 
+                  type="Button">
+                   
+           <input onclick="btn_east_click();" 
+                  value="East" 
+                  type="Button">
+                   
+           <input onclick="btn_west_click();" 
+                  value="West" 
+                  type="Button">
+         <br>
+         <br>
+         <br>
+           <input onclick="btn_score_click();" 
+                  value="Check Your Score!" 
+                  type="Button">
+         <br>
+         <br>
+         <br>
+         <br>
+          <P class="mail">If you have any questions, you can <A href="mailto:benjamin.delgiorno1@marist.edu"> 
+          Contact Me</A> by clicking the link.</P>
+    </body>
+</html>
