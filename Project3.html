@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Ben DelGiorno
+    Introduction to Programming
+    Project 3 - Text Adventure Game-v0.4 -->
+ <head>
+   <title>Trapped</title>
+   <style>
+      body {Background-color:black;}
+      h1 {font-family: sans; color: orange;}
+      .mail {font-family: sans; font-size: 10pt; color: orange;}
+   </style>
+        <script type="text/javascript">
+            var score = 0;
+            var NORTH = 1;
+            var SOUTH = 2;
+            var EAST = 3;
+            var WEST = 4;
+            var currentLocation = 0;
+            var hasVisited0 = false;
+            var hasVisited1 = false;
+            var hasVisited2 = false;
+            var hasVisited3 = false;
+            var hasVisited4 = false;
+            var hasVisited5 = false;
+            var hasVisited6 = false; 
+            var loc0msg = "Select another direction to move.";
+            var loc1msg = "Looking North, there is an old campsite that has been abandoned.";
+            var loc2msg = "Looking South, there is a trail blocked by fallen trees and overgrown brush.";
+            var loc3msg = "Looking East, there is a cottage in the distance with lights on and footsteps leading to it.";
+            var loc4msg = "Looking West, there is a large creek blocking your path.";
+            var loc5msg = "Continuing North, you investigate the abandoned campground.";
+            var loc6msg = "Continuing East, you begin to approach the cottage.";
+
+            
+            function move(direction) {
+              if (direction === NORTH) {
+                if (currentLocation == 3) {
+                    currentLocation = 0;
+                    updateDisplay(loc0msg);
+                }
+                else if (currentLocation == 0) {
+                    currentLocation = 1;
+                    updateDisplay(loc1msg);
+                    score = score + 5;
+                    hasVisited1 =true;
+                } else if (currentLocation == 1) {
+                    currentLocation = 5;
+                    updateDisplay(loc5msg);
+                    score =score + 5;
+                    hasVisited5 =true;
+                } else {
+                    updateDisplay("You cannot go that way.");  
+                } 
+                  } else if (direction === SOUTH) {
+                  
+                  } else if (direction === EAST) {
+                      
+                  } else if (direction === WEST) {
+                      
+                  } else {
+                      updateDisplay("Error. Unknown Direction.");
+                  }
+                  
+              if (direction === SOUTH) {
+                if (currentLocation == 5) {
+                    currentLocation = 1;
+                    updateDisplay(loc1msg);
+                } else if (currentLocation == 1) {
+                    currentLocation = 0;
+                    updateDisplay(loc0msg);
+                } else if (currentLocation == 0) {
+                    currentLocation = 3;
+                    updateDisplay(loc2msg);
+                    score = score + 5;
+                    hasVisited3 =true;
+                }  else {
+                    updateDisplay("You cannot go that way.");
+                }   
+                  } else if (direction === NORTH) {
+      
+                  } else if (direction === EAST) {
+                      
+                  } else if (direction === WEST) {
+                      
+                  } else {
+                      updateDisplay("Error. Unknown Direction.");
+                  } 
+                  
+              if (direction === EAST) {
+                if (currentLocation == 4) {
+                    currentLocation = 0;
+                    updateDisplay(loc0msg);
+                } else if (currentLocation == 0) {
+                    currentLocation = 2;
+                    updateDisplay(loc3msg);
+                    score = score + 5;
+                    hasVisited2 =true;
+                } else if (currentLocation == 2) {
+                    currentLocation = 6;
+                    updateDisplay(loc6msg);
+                    score = score + 5;
+                    hasVisited6 =true;
+                }  else {
+                    updateDisplay("You cannot go that way.");
+                }  
+                  } else if (direction === SOUTH) {
+                      
+                  } else if (direction === NORTH) {
+                      
+                  } else if (direction === WEST) {
+                     
+                  } else {
+                      updateDisplay("Error. Unknown Direction.");
+                  }
+                
+              if (direction === WEST) {
+                if (currentLocation == 6) {
+                    currentLocation = 2;
+                    updateDisplay(loc0msg);
+                } else if (currentLocation == 2) {
+                    currentLocation = 0;
+                } else if (currentLocation == 0) {
+                    currentLocation = 4;
+                    updateDisplay(loc4msg);
+                    score = score + 5;
+                    hasVisited4 =true;
+                }  else {
+                    updateDisplay("You cannot go that way.");
+                }   
+                  } else if (direction === SOUTH) {
+                      
+                  } else if (direction === EAST) {
+                     
+                  } else if (direction === NORTH) {
+                      
+                  } else {
+                      updateDisplay("Error. Unknown Direction.");
+                  } 
+            }  
+
+            function btn_score_click(){
+              score =score;
+              alert(score);
+            }
+            
+            function btn_go_click(direction) {
+              var userInput =document.getElementById("txtInput").value;
+              updateDisplay();
+              
+              if (userInput === "N" || userInput === "n") {
+                    if (currentLocation == 3) {
+                    currentLocation = 0;
+                    updateDisplay(loc0msg);
+                } else if (currentLocation == 0) {
+                    currentLocation = 1;
+                    updateDisplay(loc1msg);
+                    score = score + 5;
+                    hasVisited1 =true;
+                } else if (currentLocation == 1) {
+                    currentLocation = 5;
+                    updateDisplay(loc5msg);
+                    score = score + 5;
+                    hasVisited5 =true;
+                } else {
+                    updateDisplay("You cannot go that way.");  
+                }     
+              } 
+                 
+              else if (userInput === "S" || userInput === "s") {
+                if (currentLocation == 5) {
+                    currentLocation = 1;
+                    updateDisplay(loc1msg);
+                } else if (currentLocation == 1) {
+                    currentLocation = 0;
+                    updateDisplay(loc0msg);
+                } else if (currentLocation == 0) {
+                    currentLocation = 3;
+                    updateDisplay(loc2msg);
+                    score = score + 5;
+                    hasVisited3 =true;
+                }  else {
+                    updateDisplay("You cannot go that way.");
+                }   
+              }
+              
+              else if (userInput === "E" || userInput === "e") {
+                if (currentLocation == 4) {
+                    currentLocation = 0;
+                    updateDisplay(loc0msg);
+                } else if (currentLocation == 0) {
+                    currentLocation = 2;
+                    updateDisplay(loc3msg);
+                    score = score + 5;
+                    hasVisited2 =true;
+                } else if (currentLocation == 2) {
+                    currentLocation = 6;
+                    updateDisplay(loc6msg);
+                    score = score + 5;
+                    hasVisited6 =true;
+                }  else {
+                    updateDisplay("You cannot go that way.");
+                } 
+              }
+              
+              else if (userInput === "W" || userInput === "w") {
+                if (currentLocation == 6) {
+                    currentLocation = 2;
+                    updateDisplay(loc0msg);
+                } else if (currentLocation == 2) {
+                    currentLocation = 0;
+                } else if (currentLocation == 0) {
+                    currentLocation = 4;
+                    updateDisplay(loc4msg);
+                    score = score + 5;
+                    hasVisited4 =true;
+                }  else {
+                    updateDisplay("You cannot go that way.");
+                }  
+              } 
+              else { 
+                 updateDisplay("Valid commands are \"N\", \"S\", \"E\", \"W\" or \"n\", \"s\", \"e\", \"w\""); 
+              } 
+            }
+
+            function updateDisplay(msg) {   
+              msg = msg + "[" + currentLocation + "]";
+              var ta = document.getElementById("taGame");
+              ta.value = msg + "\n" + ta.value;              
+            }        
+        </script>
+  </head>
+    <body>
+      <h1>Trapped - v0.4</h1>
+         <br>
+         <br>
+      <textarea id="taGame" cols="70" rows="10" style="font-family: sans; text-align: left; color: orange; background-color: black;" >
+You are standing in the middle of a forest surrounded by tall trees and darkness. 
+It is a brisk fall night and the moonlight is overshadowed by clouds. You begin to hear noises and become panicked. 
+You must find a way out of the forest and get to a safer place before it is too late.
+      </textarea>
+         <br>
+         <br>
+          
+          <input type="text"
+                 id="txtInput">
+          
+          <input  type="Button" 
+                  value="Go"
+                  onclick="btn_go_click();">
+         
+         <br>
+         
+           <input type="Button"
+                  value="North"
+                  onclick="move(NORTH);">
+
+           <input type="Button"
+                  value="South" 
+                  onclick="move(SOUTH);">
+                   
+           <input type="Button"
+                  value="East" 
+                  onclick="move(EAST);">
+                   
+           <input type="Button"
+                  value="West" 
+                  onclick="move(WEST);">
+         <br>
+         <br>
+         <br>
+           <input type="Button"
+                  value="Check Your Score!" 
+                  onclick="btn_score_click();">
+         <br>
+         <br>
+         <br>
+         <br>
+          <P class="mail">If you have any questions, you can <A href="mailto:benjamin.delgiorno1@marist.edu"> 
+          Contact Me</A> by clicking the link.</P>
+    </body>
+</html>
