@@ -51,7 +51,7 @@ var playerHasMap = false;
      
       function btn_east_click () {
           switch (currentLocation){
-              case 4 : currentlocation = 0; 
+              case 4 : currentLocation = 0; 
                     init ();                    
                     break;           
               
