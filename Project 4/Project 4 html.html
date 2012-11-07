@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<!--Ben DelGiorno
+    Introduction to Programming
+    Project 4 - Text Adventure Game-v0.6 -->
+ <head>
+   <title>Trapped</title>
+   <style>
+      body {Background-color:black;}
+      h1 {font-family: sans; color: orange;}
+      .mail {font-family: sans; font-size: 10pt; color: orange;}
+   </style>
+        <script type="text/javascript" src="locations.js">
+        </script>
+  </head>
+    
+    <body onload = "init()">
+     
+      <h1>Trapped - v0.4</h1>
+         <br>
+         <br>
+      <textarea id="taGame" cols="70" rows="10" style="font-family: sans; text-align: left; color: orange; background-color: black;" >
+      </textarea>
+         
+         <br>
+         <br>
+          
+          <input type="text"
+                 id="txtInput">
+          
+          <input  type="Button" 
+                  value="Go"
+                  onclick="btn_go_click();">
+         
+         <br>
+         
+           <input type="Button"
+                  value="North"
+                  onclick="btn_north_click();"
+                  id="idNorth">
+
+           <input type="Button"
+                  value="South" 
+                  onclick="btn_south_click();"
+                  id="idSouth">
+                   
+           <input type="Button"
+                  value="East" 
+                  onclick="btn_east_click();"
+                  id="idEast">
+                   
+           <input type="Button"
+                  value="West" 
+                  onclick="btn_west_click();"
+                  id="idWest">
+         <br>
+         <br>
+         <br>
+           <input type="Button"
+                  value="Check Your Score!" 
+                  onclick="btn_score_click();">
+         <br>
+         <br>
+         
+         <img src="map.png" width="700" height="400" alt="background picture">
+         
+         
+         <br>
+         <br>
+          <P class="mail">If you have any questions, you can <A href="mailto:benjamin.delgiorno1@marist.edu"> 
+          Contact Me</A> by clicking the link.</P>
+    </body>
+</html>
